@@ -1,0 +1,77 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"_pQZj6ptYT\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">SEPL</span>\",\"col\":12}},{\"id\":\"DVETZ0sJqJ\",\"type\":\"card\",\"data\":{\"card_name\":\"LED Conversion\",\"col\":4}},{\"id\":\"6uWW9M6_kB\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports and Masters\",\"col\":4}}]",
+ "creation": "2024-06-17 13:26:45.134636",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "idx": 0,
+ "indicator_color": "blue",
+ "is_hidden": 0,
+ "label": "SEPL",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Reports and Masters",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Quotation Report",
+   "link_count": 0,
+   "link_to": "Quotation Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vessel Master",
+   "link_count": 0,
+   "link_to": "Vessel Master",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "LED Conversion",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "LED Conversion Proposal",
+   "link_count": 0,
+   "link_to": "LED Conversion Proposal",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2024-06-18 02:01:44.645494",
+ "modified_by": "Administrator",
+ "module": "SEPL",
+ "name": "SEPL",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 2.5,
+ "shortcuts": [],
+ "title": "SEPL"
+}
