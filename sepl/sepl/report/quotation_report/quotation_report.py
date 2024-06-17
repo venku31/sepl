@@ -53,12 +53,35 @@ def get_columns():
 			"width": 120,
 		},
 		{
+			"fieldname": "custom_customer_ref_no",
+			"label": _("Ref No"),
+			"fieldtype": "Data",
+			"width": 100,
+		},
+		{
+			"fieldname": "custom_destination",
+			"label": _("Destination"),
+			"fieldtype": "Data",
+			"width": 100,
+		},
+		{
 			"fieldname": "status",
 			"label": _("Status"),
 			"fieldtype": "Data",
-			"width": 150,
+			"width": 100,
 		},
-				
+		{
+			"fieldname": "total_qty",
+			"label": _("Total Qty"),
+			"fieldtype": "Data",
+			"width": 80,
+		},
+		{
+			"fieldname": "grand_total",
+			"label": _("Grand Total"),
+			"fieldtype": "Data",
+			"width": 120,
+		},		
 							
 	]
 	return columns
@@ -71,7 +94,7 @@ def get_data(filters):
 		party_name as customer ,
 		customer_name,
 		transaction_date as date,
-		status,
+		status,custom_customer_ref_no,custom_destination,total_qty,grand_total,
 		owner as created_by
 		from `tabQuotation` 
 		WHERE DATE(transaction_date) BETWEEN %(from_date)s AND %(to_date)s
@@ -103,9 +126,10 @@ def get_chart_data(data):
 
 	draft = 0
 	open  = 0
-	registered =0
+	expired =0
 	partially_ordered =0
 	ordered = 0
+	cancelled = 0
 
 	for entry in data:
 		if entry.status == "Draft":
@@ -116,17 +140,18 @@ def get_chart_data(data):
 			partially_ordered += 1
 		elif entry.status == "Ordered":
 			ordered += 1
-		
+		elif entry.status == "Cancelled":
+			cancelled += 1
 		else:
-			registered += 1
+			expired += 1
 
 	chart = {
 		"data": {
 			# "labels": [_("pending"), _("registered"),_("pending_procurement_review"),_("pending_prequalification"),_("approved"),_("rejected")],
-			"datasets": [{"name": _("Status"), "values": [draft,open,partially_ordered,ordered]}],
+			"datasets": [{"name": _("Status"), "values": [draft,open,partially_ordered,ordered,expired,cancelled]}],
 		},
 		"type": "donut",
-		"colors": ["red", "red", "yellow","green"],
+		"colors": ["red", "red", "yellow","green","red","red"],
 	}
 
 	return chart
@@ -141,36 +166,56 @@ def get_report_summary(data):
 	open = len([entry.name for entry in data if entry.status in ["Open" ]])
 	partially_ordered = len([entry.name for entry in data if entry.status == "Partially Ordered"])
 	ordered = len([entry.name for entry in data if entry.status in ["Ordered"]])
-
+	expired = len([entry.name for entry in data if entry.status in ["Expired" ]])+len([entry.name for entry in data if entry.status in ["Lost" ]])
+	cancelled = len([entry.name for entry in data if entry.status in ["Cancelled" ]])
 	return [
 		{
 			"value": total,
 			"label": _("Total"),
 			"indicator": "Blue" ,
 			"datatype": "Int",
+			"width": 80,
 		},
 		{
 			"value": draft,
 			"label": _("Draft"),
 			"indicator": "Red",
 			"datatype": "Int",
+			"width":80,
 		},
 		{
 			"value": open,
 			"label": _("Open"),
 			"indicator": "Red",
 			"datatype": "Int",
+			"width": 80,
 		},
 		{
 			"value": partially_ordered,
 			"label": _("Partially Ordered"),
 			"indicator": "Green",
 			"datatype": "Int",
+			"width": 80,
 		},
 		{
 			"value": ordered,
 			"label": _("Ordered"),
 			"indicator": "Green",
 			"datatype": "Int",
+			"width": 80,
+		},
+		{
+			"value": expired,
+			"label": _("Expired/Lost"),
+			"indicator": "Red",
+			"datatype": "Int",
+			"width": 80,
+		},
+		{
+			"value": cancelled,
+			"label": _("Cancelled"),
+			"indicator": "Red",
+			"datatype": "Int",
+			"width": 80,
 		},
 	]		

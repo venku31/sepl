@@ -1,0 +1,183 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-06-17 14:13:16.697372",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "page_no",
+  "light_details",
+  "location",
+  "wattage",
+  "fixtures",
+  "units",
+  "column_break_pdzm",
+  "sepl_proposal",
+  "sepl_wattage",
+  "qty",
+  "usage_factor",
+  "installed_bf_power_conversion",
+  "power_before_conversion_at_sea",
+  "column_break_djpb",
+  "power_before_conversion_at_port",
+  "installed_power_af_conversion",
+  "power_after_conversion_at_sea",
+  "power_after_conversion_at_port",
+  "power_consumption_per_year_before_conversion_in_kwh",
+  "power_consumption_per_year_after_conversion_in_kwh"
+ ],
+ "fields": [
+  {
+   "columns": 1,
+   "fieldname": "page_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Page No"
+  },
+  {
+   "columns": 2,
+   "fieldname": "light_details",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Light Details"
+  },
+  {
+   "columns": 1,
+   "fieldname": "location",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Location",
+   "options": "Location"
+  },
+  {
+   "columns": 1,
+   "fieldname": "wattage",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Wattage"
+  },
+  {
+   "columns": 1,
+   "fieldname": "fixtures",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Fixtures"
+  },
+  {
+   "columns": 1,
+   "fieldname": "units",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Units"
+  },
+  {
+   "fieldname": "column_break_pdzm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "columns": 2,
+   "fieldname": "sepl_proposal",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "SEPL Proposal",
+   "options": "SEPL Proposal"
+  },
+  {
+   "fieldname": "sepl_wattage",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Wattage(W)"
+  },
+  {
+   "columns": 1,
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Qty"
+  },
+  {
+   "columns": 1,
+   "fieldname": "usage_factor",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Usage Factor"
+  },
+  {
+   "columns": 1,
+   "default": "0",
+   "fieldname": "installed_bf_power_conversion",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Installed B/F Power Conversion",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "power_before_conversion_at_sea",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Power before conversion at sea"
+  },
+  {
+   "fieldname": "column_break_djpb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "columns": 1,
+   "default": "0",
+   "fieldname": "power_before_conversion_at_port",
+   "fieldtype": "Float",
+   "label": "Power before conversion at Port",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "default": "0",
+   "fieldname": "installed_power_af_conversion",
+   "fieldtype": "Float",
+   "label": "Installed Power AF Conversion",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "power_after_conversion_at_sea",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Power after conversion at Sea"
+  },
+  {
+   "default": "0",
+   "fieldname": "power_after_conversion_at_port",
+   "fieldtype": "Float",
+   "label": "Power after conversion at Port",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "power_consumption_per_year_before_conversion_in_kwh",
+   "fieldtype": "Float",
+   "label": "Power consumption per year Before Conversion in KWH",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "power_consumption_per_year_after_conversion_in_kwh",
+   "fieldtype": "Float",
+   "label": "Power consumption per year After Conversion in KWH",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-06-18 00:42:28.669573",
+ "modified_by": "Administrator",
+ "module": "SEPL",
+ "name": "LED Conversion Proposal Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

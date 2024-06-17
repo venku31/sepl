@@ -1,0 +1,272 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": ".{customer}.-.####",
+ "creation": "2024-06-17 13:49:13.995986",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "customer",
+  "column_break_gbgs",
+  "customer_name",
+  "column_break_vhxq",
+  "date",
+  "section_break_ymyz",
+  "proposal_detals",
+  "section_break_xyky",
+  "installed_bf_power_conversion",
+  "column_break_abec",
+  "power_before_conversion_at_sea",
+  "column_break_kson",
+  "power_before_conversion_at_port",
+  "column_break_clha",
+  "installed_power_af_conversion",
+  "section_break_faww",
+  "column_break_wxkv",
+  "power_after_conversion_at_sea",
+  "column_break_runp",
+  "power_after_conversion_at_port",
+  "column_break_kucv",
+  "power_consumption_per_year_before_conversion_in_kwh",
+  "column_break_ccef",
+  "power_consumption_per_year_after_conversion_in_kwh",
+  "section_break_hydn",
+  "power_savings",
+  "power_saving_per_year",
+  "column_break_buho",
+  "co2_saving_per_year",
+  "column_break_azwy",
+  "fuel_cost_saving__per_year",
+  "fuel_saving_per_year"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_gbgs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_vhxq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_ymyz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "proposal_detals",
+   "fieldtype": "Table",
+   "label": "Details",
+   "options": "LED Conversion Proposal Details"
+  },
+  {
+   "fieldname": "section_break_xyky",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "installed_bf_power_conversion",
+   "fieldtype": "Float",
+   "label": "Installed B/F Power Conversion",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_abec",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_kson",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_clha",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "power_before_conversion_at_sea",
+   "fieldtype": "Float",
+   "label": "Power before conversion at sea",
+   "read_only": 1
+  },
+  {
+   "fieldname": "power_before_conversion_at_port",
+   "fieldtype": "Float",
+   "label": "Power before conversion at Port",
+   "read_only": 1
+  },
+  {
+   "fieldname": "installed_power_af_conversion",
+   "fieldtype": "Float",
+   "label": "Installed Power AF Conversion",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_wxkv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "power_after_conversion_at_sea",
+   "fieldtype": "Float",
+   "label": "Power after conversion at Sea",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_runp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "power_after_conversion_at_port",
+   "fieldtype": "Float",
+   "label": "Power after conversion at Port",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ccef",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "power_consumption_per_year_before_conversion_in_kwh",
+   "fieldtype": "Float",
+   "label": "Power consumption per year Before Conversion in KWH",
+   "read_only": 1
+  },
+  {
+   "columns": 3,
+   "fieldname": "power_consumption_per_year_after_conversion_in_kwh",
+   "fieldtype": "Float",
+   "label": "Power consumption per year After Conversion in KWH",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_faww",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_kucv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_hydn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "power_savings",
+   "fieldtype": "Float",
+   "label": "Power Savings(KWH)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "power_saving_per_year",
+   "fieldtype": "Float",
+   "label": "Power saving per year",
+   "read_only": 1
+  },
+  {
+   "fieldname": "fuel_saving_per_year",
+   "fieldtype": "Float",
+   "label": "Fuel saving per year @SFOC of 220 grams/KWH"
+  },
+  {
+   "fieldname": "fuel_cost_saving__per_year",
+   "fieldtype": "Float",
+   "label": "Fuel cost saving  per year@ USD650/- per ton",
+   "read_only": 1
+  },
+  {
+   "fieldname": "co2_saving_per_year",
+   "fieldtype": "Float",
+   "label": "CO2 saving per year( 3.5 MT CO2 for 1MT of HFO)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_buho",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_azwy",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-06-18 01:21:06.187760",
+ "modified_by": "Administrator",
+ "module": "SEPL",
+ "name": "LED Conversion Proposal",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Purchase User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Stock User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
