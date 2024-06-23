@@ -1,0 +1,36 @@
+{
+ "add_total_row": 1,
+ "columns": [],
+ "creation": "2024-06-24 00:34:47.563094",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": "Seraphic Sigapore",
+ "letterhead": null,
+ "modified": "2024-06-24 00:34:47.563094",
+ "modified_by": "Administrator",
+ "module": "SEPL",
+ "name": "LED Conversion Proposal",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "LED Conversion Proposal",
+ "report_name": "LED Conversion Proposal",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Sales User"
+  },
+  {
+   "role": "Purchase User"
+  },
+  {
+   "role": "Stock User"
+  }
+ ]
+}

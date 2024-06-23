@@ -15,35 +15,6 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Reports and Masters",
-   "link_count": 2,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Quotation Report",
-   "link_count": 0,
-   "link_to": "Quotation Report",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Vessel Master",
-   "link_count": 0,
-   "link_to": "Vessel Master",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
    "label": "LED Conversion",
    "link_count": 1,
    "link_type": "DocType",
@@ -59,9 +30,28 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Reports and Masters",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Quotation Report",
+   "link_count": 0,
+   "link_to": "Quotation Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2024-06-18 02:01:44.645494",
+ "modified": "2024-06-23 15:37:02.692262",
  "modified_by": "Administrator",
  "module": "SEPL",
  "name": "SEPL",
