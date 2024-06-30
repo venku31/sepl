@@ -14,51 +14,123 @@ def execute(filters=None):
 
 def get_columns():
 	columns = [
+		# {
+		# 	"label": _("Customer"),
+		# 	"fieldname": "customer",
+		# 	"fieldtype": "Link",
+		# 	"options": "Customer",
+		# 	"width": 100,
+		# },
+		# {"label": _("Id"), "fieldname": "transaction_id", "fieldtype": "Data", "width": 100},
+		# {"fieldname": "customer_name", "label": _("Customer Name"), "fieldtype": "data", "width": 80},
 		{
-			"label": _("GRN"),
-			"fieldname": "name",
-			"fieldtype": "Link",
-			"options": "GRN Inward",
-			"width": 100,
+			"fieldname": "page_no",
+			"label": _("Page No"),
+			"fieldtype": "data",
+			"width": 80,
 		},
-		{"label": _("GRN Date"), "fieldname": "grn_date", "fieldtype": "Date", "width": 100},
-		{"fieldname": "grn_time", "label": _("Time"), "fieldtype": "Time", "width": 80},
 		{
-			"fieldname": "supplier",
-			"label": _("Supplier"),
-			"fieldtype": "Link",
-			"options": "Supplier",
-			"width": 150,
-		},
-		{
-			"label": _("Supplier Name"),
-			"fieldname": "supplier_name",
+			"label": _("Sepl Proposal"),
+			"fieldname": "sepl_proposal",
 			"fieldtype": "Data",
 			"width": 120,
 		},
-		
-		{"label": _("Part Number"), "fieldname": "part_number", "fieldtype": "Link", "options": "Item","width": 120},
 		{
-			"label": _("Item Name"),
-			"fieldname": "item_name",
+			"label": _("power_before_conversion_at_port"),
+			"fieldname": "power_before_conversion_at_port",
 			"fieldtype": "Data",
-			"width": 150,
+			"width": 120,
 		},
 		{
-			"label": _("Parent Lot"),
-			"fieldname": "lot_no",
-			"fieldtype": "Link",
-			"options": "Lot Number",
-			"width": 100,
+			"label": _("light_details"),
+			"fieldname": "light_details",
+			"fieldtype": "Data",
+			"width": 120,
 		},
-		{"fieldname": "batch_no", "label": _("Lot No"), "fieldtype": "Link", "options": "Lot Number","width": 120},
-		{"fieldname": "qty", "label": _("Qty"), "fieldtype": "Float", "width": 100},
-		{"fieldname": "main_warehouse", "label": _("Main Warehouse"), "fieldtype": "Link", "options": "Warehouse","width": 150},
-		{"label": _("Supplier Bill No"), "fieldname": "supplier_invoice_no", "fieldtype": "Data", "width": 80},
-		{"label": _("Bill Date"), "fieldname": "supplier_invoice_date", "fieldtype": "Data", "width": 80},
-		{"label": _("Purchase Receipt"), "fieldname": "purchase_receipt", "fieldtype": "Link","options": "Purchase Receipt", "width": 120},
-		{"fieldname": "purchase_order", "label": _("Purchase Order"), "fieldtype": "Link", "options": "Purchase Order","width": 150},
-		
+		{
+			"label": _("sepl_wattage"),
+			"fieldname": "sepl_wattage",
+			"fieldtype": "Data",
+			"width": 120,
+		},
+		{
+			"label": _("installed_power_af_conversion"),
+			"fieldname": "installed_power_af_conversion",
+			"fieldtype": "Data",
+			"width": 120,
+		},
+		{
+			"label": _("location"),
+			"fieldname": "location",
+			"fieldtype": "Data",
+			"width": 120,
+		},
+		{
+			"label": _("Qty"),
+			"fieldname": "qty",
+			"fieldtype": "Data",
+			"width": 120,
+		},
+		{
+			"label": _("power_after_conversion_at_sea"),
+			"fieldname": "power_after_conversion_at_sea",
+			"fieldtype": "Data",
+			"width": 120,
+		},
+		{
+			"label": _("wattage"),
+			"fieldname": "wattage",
+			"fieldtype": "Data",
+			"width": 120,
+		},
+		{
+			"label": _("usage_factor"),
+			"fieldname": "usage_factor",
+			"fieldtype": "Data",
+			"width": 120,
+		},
+		{
+			"label": _("power_after_conversion_at_port"),
+			"fieldname": "power_after_conversion_at_port",
+			"fieldtype": "Data",
+			"width": 120,
+		},
+		{
+			"label": _("fixtures"),
+			"fieldname": "fixtures",
+			"fieldtype": "Data",
+			"width": 120,
+		},
+		{
+			"label": _("installed_bf_power_conversion"),
+			"fieldname": "installed_bf_power_conversion",
+			"fieldtype": "Data",
+			"width": 120,
+		},
+		{
+			"label": _("power_consumption_per_year_before_conversion_in_kwh"),
+			"fieldname": "power_consumption_per_year_before_conversion_in_kwh",
+			"fieldtype": "Data",
+			"width": 120,
+		},
+		{
+			"label": _("units"),
+			"fieldname": "units",
+			"fieldtype": "Data",
+			"width": 120,
+		},
+		{
+			"label": _("power_before_conversion_at_sea"),
+			"fieldname": "power_before_conversion_at_sea",
+			"fieldtype": "Data",
+			"width": 120,
+		},
+		{
+			"label": _("power_consumption_per_year_after_conversion_in_kwh"),
+			"fieldname": "power_consumption_per_year_after_conversion_in_kwh",
+			"fieldtype": "Data",
+			"width": 120,
+		},
 	]
 	return columns
 
@@ -66,26 +138,34 @@ def get_columns():
 def get_data(filters):
 	return frappe.db.sql(
 		"""
-		Select grn.name,
-        grn.grn_date,
-        grn.grn_time,
-        grn.supplier,
-        grn.supplier_name,
-        grn.supplier_invoice_no,
-        grn.supplier_invoice_date,
-        grn.purchase_receipt,
-        det.part_number,
-        det.item_name,
-        det.lot_no ,
-        det.batch_no,
-        det.qty,grn.purchase_order ,grn.main_warehouse
-        from `tabGRN Inward` grn join `tabGRN Inward Item Details` det ON(grn.name=det.parent and grn.docstatus=1)
-		WHERE
-			company = %(company)s
-			AND DATE(grn.grn_date) BETWEEN %(from_date)s AND %(to_date)s
+		select
+		led.customer,
+		led.customer_name,
+		led.date ,
+		led.name as transaction_id,
+		ledt.page_no,
+		ledt.sepl_proposal,
+		ledt.power_before_conversion_at_port,
+		ledt.light_details,
+		ledt.sepl_wattage,
+		ledt.installed_power_af_conversion,
+		ledt.location,
+		ledt.qty,
+		ledt.power_after_conversion_at_sea,
+		ledt.wattage,
+		ledt.usage_factor,
+		ledt.power_after_conversion_at_port,
+		ledt.fixtures,
+		ledt.installed_bf_power_conversion,
+		ledt.power_consumption_per_year_before_conversion_in_kwh,
+		ledt.units,
+		ledt.power_before_conversion_at_sea,
+		ledt.power_consumption_per_year_after_conversion_in_kwh
+        from `tabLED Conversion Proposal` led join `tabLED Conversion Proposal Details` ledt ON(led.name=ledt.parent)
+		WHERE led.customer=%(customer)s
 			{conditions}
 		ORDER BY
-			grn.grn_date,det.batch_no asc """.format(
+			led.date,led.customer asc """.format(
 			conditions=get_conditions(filters)
 		),
 		filters,
@@ -96,13 +176,8 @@ def get_data(filters):
 def get_conditions(filters):
 	conditions = []
 
-	if filters.get("supplier"):
-		conditions.append(" and grn.supplier=%(supplier)s")
-
-	if filters.get("main_warehouse"):
-		conditions.append(" and grn.main_warehouse =%(main_warehouse)s")
-
-	if filters.get("purchase_order"):
-		conditions.append(" and grn.purchase_order =%(purchase_order)s")
+	
+	if filters.get("transaction_id"):
+		conditions.append(" and led.name=%(transaction_id)s")
 
 	return " ".join(conditions) if conditions else ""
