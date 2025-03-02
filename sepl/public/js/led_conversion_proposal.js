@@ -9,6 +9,8 @@ frappe.ui.form.on('LED Conversion Proposal', {
         // d.installed_bf_power_conversion = d.units+d.wattage;
         frm.doc.proposal_detals.forEach(function(d) { 
                 d.installed_bf_power_conversion = d.units*d.wattage;
+                d.power_before_conversion_at_sea = d.installed_bf_power_conversion*d.usage_factor*0.6
+                d.power_after_conversion_at_sea = d.installed_power_af_conversion*d.usage_factor*0.6
                 d.power_before_conversion_at_port = (d.units*d.wattage)*d.usage_factor*0.4;
                 d.installed_power_af_conversion = d.sepl_wattage*d.qty;
                 d.power_after_conversion_at_port = (d.sepl_wattage*d.qty)*d.usage_factor*0.4;
