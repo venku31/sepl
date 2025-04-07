@@ -29,7 +29,9 @@ app_license = "mit"
 
 # include js in doctype views
 # doctype_js = {"doctype" : "public/js/doctype.js"}
-doctype_js = {"LED Conversion Proposal" : "public/js/led_conversion_proposal.js"}
+doctype_js = {"LED Conversion Proposal" : "public/js/led_conversion_proposal.js",
+              "Quotation" : "public/js/quotation.js"
+              }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -151,7 +153,23 @@ doctype_js = {"LED Conversion Proposal" : "public/js/led_conversion_proposal.js"
 # 		"sepl.tasks.monthly"
 # 	],
 # }
-
+fixtures = [
+            
+	{"doctype": "Custom Field",
+        "filters": [
+            [
+                "name",
+                "in",
+                [
+                    "Delivery Note-custom_quotation",
+                    "Delivery Note Item-custom_against_quotation",
+                    
+				]
+			]
+		]            
+	},
+        	
+]
 # Testing
 # -------
 
