@@ -30,3 +30,11 @@ def create_delivery_note_from_quotation(quotation_name):
     delivery_note.insert(ignore_permissions=True)
     delivery_note.reload()
     return delivery_note.as_dict()
+
+
+@frappe.whitelist()
+def before_submit(doc, method):
+    if doc.docstatus == 1:
+        for item in doc.items:
+            if not item.against_sales_order:
+                frappe.throw(f"Row {item.idx}: 'Against Sales Order' is required for this item before submitting.")

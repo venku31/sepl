@@ -30,7 +30,8 @@ app_license = "mit"
 # include js in doctype views
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 doctype_js = {"LED Conversion Proposal" : "public/js/led_conversion_proposal.js",
-              "Quotation" : "public/js/quotation.js"
+              "Quotation" : "public/js/quotation.js",
+              "Delivery Note" : "public/js/delivery_note.js"
               }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
@@ -125,13 +126,16 @@ doctype_js = {"LED Conversion Proposal" : "public/js/led_conversion_proposal.js"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+	# "*": {
+	# 	"on_update": "method",
+	# 	"on_cancel": "method",
+	# 	"on_trash": "method"
+	# }
+    "Delivery Note": {
+        "before_submit": "sepl.api.delivery_note.before_submit"
+    }
+}
 
 # Scheduled Tasks
 # ---------------

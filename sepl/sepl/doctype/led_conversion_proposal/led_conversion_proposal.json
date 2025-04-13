@@ -11,6 +11,8 @@
   "customer_name",
   "column_break_vhxq",
   "date",
+  "column_break_eqpv",
+  "vessel",
   "section_break_ymyz",
   "proposal_detals",
   "section_break_xyky",
@@ -205,12 +207,21 @@
   {
    "fieldname": "column_break_azwy",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_eqpv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vessel",
+   "fieldtype": "Data",
+   "label": "Vessel"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-18 01:21:06.187760",
+ "modified": "2025-04-13 15:26:57.064710",
  "modified_by": "Administrator",
  "module": "SEPL",
  "name": "LED Conversion Proposal",
