@@ -33,25 +33,6 @@
   },
   {
    "hidden": 0,
-   "is_query_report": 0,
-   "label": "Reports and Masters",
-   "link_count": 1,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 1,
-   "label": "Quotation Report",
-   "link_count": 0,
-   "link_to": "Quotation Report",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
    "is_query_report": 1,
    "label": "LED Conversion Proposal",
    "link_count": 0,
@@ -459,9 +440,48 @@
    "link_type": "Report",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Reports and Masters",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Quotation Report",
+   "link_count": 0,
+   "link_to": "Quotation Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "LED Conversion Proposal",
+   "link_count": 0,
+   "link_to": "LED Conversion Proposal",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Expense Claim Report",
+   "link_count": 0,
+   "link_to": "Expense Claim Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2025-03-03 01:16:26.289111",
+ "modified": "2025-09-28 02:20:02.096816",
  "modified_by": "Administrator",
  "module": "SEPL",
  "name": "SEPL",

@@ -37,7 +37,7 @@ def create_quotation(proposal):
                 "stock_uom": "Nos",        # default UOM
                 "is_sales_item": 1
             })
-            item.insert(ignore_permissions=True)
+            item.insert(ignore_permissions=True, ignore_mandatory=True)
             frappe.db.commit()
 
         # Add item to quotation
