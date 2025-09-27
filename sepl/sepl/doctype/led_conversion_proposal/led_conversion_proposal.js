@@ -56,7 +56,7 @@ function main_total_qty(frm) {
 	});
 
 	let power_savings = power_consumption_per_year_before_conversion_in_kwh - power_consumption_per_year_after_conversion_in_kwh;
-	let fuel_saving_per_year = (power_after_conversion_at_port * 220) / 1000000;
+	let fuel_saving_per_year = ((power_consumption_per_year_before_conversion_in_kwh - power_consumption_per_year_after_conversion_in_kwh) * 220) / 1000000;
 	let fuel_cost_saving__per_year = fuel_saving_per_year * 650;
 	let co2_saving_per_year = fuel_saving_per_year * 3.5;
 
@@ -77,3 +77,22 @@ function main_total_qty(frm) {
 
 
 
+frappe.ui.form.on("LED Conversion Proposal", {
+    refresh: function(frm) {
+        if (!frm.is_new()) {
+            frm.add_custom_button(__('Create Quotation'), function() {
+                frappe.call({
+                    method: "sepl.sepl.doctype.led_conversion_proposal.led_conversion_proposal.create_quotation",
+                    args: {
+                        proposal: frm.doc.name
+                    },
+                    callback: function(r) {
+                        if (!r.exc) {
+                            frappe.set_route("Form", "Quotation", r.message);
+                        }
+                    }
+                });
+            }, __("Create"));
+        }
+    }
+});
