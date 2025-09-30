@@ -13,6 +13,7 @@
   "date",
   "column_break_eqpv",
   "vessel",
+  "quotation",
   "section_break_ymyz",
   "proposal_detals",
   "section_break_xyky",
@@ -219,11 +220,18 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Vessel"
+  },
+  {
+   "fieldname": "quotation",
+   "fieldtype": "Link",
+   "label": "Quotation",
+   "options": "Quotation",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-07 14:49:44.372028",
+ "modified": "2025-10-01 01:25:24.795384",
  "modified_by": "Administrator",
  "module": "SEPL",
  "name": "LED Conversion Proposal",
